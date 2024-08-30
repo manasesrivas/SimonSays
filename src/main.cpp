@@ -1,6 +1,7 @@
 #include <Arduino.h>
 
 #define pinIN 13
+int8_t num, numPrev;
 
 const int leds[4]={
   2,3,4,5
@@ -19,18 +20,16 @@ void setup() {
 
 void loop() {
 
-  for (int i = 0; i <= 3; i++)
-  {
-    digitalWrite(leds[i], HIGH);
+  numPrev = num;
+  num = random(0,4);
+
+  if(num!=numPrev){
+    digitalWrite(leds[num], HIGH);
     delay(500);
-  }
-  for (int i = 0; i <= 3; i++)
-  {
-    digitalWrite(leds[i], LOW);
-    delay(500);
+    digitalWrite(leds[num], LOW); 
+    delay(500); 
   }
   
-  delay(800);
-
+  
 }
 
