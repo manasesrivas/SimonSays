@@ -65,7 +65,7 @@ void setup() {
   // puerto de lectura
   DDRB = B00000010;
   // 00000110
-
+  randomSeed(A0);
 
 }
 
